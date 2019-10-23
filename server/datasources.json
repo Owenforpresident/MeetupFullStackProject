@@ -1,0 +1,13 @@
+{
+  "db": {
+    "host": "cluster0-4aypa.mongodb.net",
+    "port": 27017,
+    "url": "mongodb+srv://eoin:eoin@cluster0-4aypa.mongodb.net/test?retryWrites=true&w=majority",
+    "database": "meetupz-app",
+    "password": "eoin",
+    "name": "db",
+    "user": "eoin",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
+  }
+}
