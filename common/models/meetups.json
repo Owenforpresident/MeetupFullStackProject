@@ -23,3 +23,7 @@
   "acls": [],
   "methods": {}
 }
+
+
+//Models are created using the LB command and basically just MongoDB schemas
+//Just makes its a little bit easier/faster to do and automatically make the api endpoints for me

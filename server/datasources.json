@@ -11,3 +11,5 @@
     "connector": "mongodb"
   }
 }
+
+//the process of assigning the DB was through the LB command

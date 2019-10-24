@@ -3,7 +3,7 @@ import axios from "axios";
 import {Link} from "react-router-dom"; 
 
 class EditMeetup extends Component {
-    constructor(props){ 
+    constructor(props){ //constructing state 
         super(props);
         this.state= {
             id: "",
@@ -11,7 +11,7 @@ class EditMeetup extends Component {
             city: "",
             address: "", 
         }
-        this.handleInputChange = this.handleInputChange.bind(this)
+        this.handleInputChange = this.handleInputChange.bind(this) //tidier in this case to bind here instead of in the render 
     }
     componentDidMount(){
         this.getMeetupDetails(); 

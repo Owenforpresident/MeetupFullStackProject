@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link} from 'react-router-dom';
 
-
+//class based component 
+//Materialise Navbar with a side menu
+//Used link to direct users to add and about pages from within the side bar
+//Icons are from font awesome
 
 class Navbar extends Component{
     render(){
