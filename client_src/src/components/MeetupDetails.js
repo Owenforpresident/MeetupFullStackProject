@@ -34,8 +34,8 @@ class MeetupDetails extends Component {
 
 //edit
 //link (button) to the editMeetup component
-//When the delete button is clicked call the onDelete function and send along "this" meaning the 
-//object, using bind(), could use es6 arrow function, or bind in the class constructor 
+//When the delete button is clicked call the onDelete function 
+//using bind() because javascript can't figure out, could use es6 arrow function, or bind in the class constructor 
 
     render() {      //what we are showing
         return (
