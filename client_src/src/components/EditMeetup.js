@@ -11,15 +11,15 @@ class EditMeetup extends Component {
             city: "",
             address: "", 
         }
-        this.handleInputChange = this.handleInputChange.bind(this) //tidier in this case to bind here instead of in the render 
+        this.handleInputChange = this.handleInputChange.bind(this) //tidier in this case to bind here instead of in the render, * more efficient??
     }
     componentDidMount(){
-        this.getMeetupDetails(); 
+        this.getMeetupDetails(); //call the GetMeetup details fucntion automatically when the page loads
     }
     getMeetupDetails(){
-        let meetupId= this.props.match.params.id;
-            axios.get(`http://localhost:3000/api/meetups/${meetupId}`)
-            .then (response => {
+        let meetupId= this.props.match.params.id;  //getting the ID from params / URL
+            axios.get(`http://localhost:3000/api/meetups/${meetupId}`) //getting that meetup from the api
+            .then (response => {  //then set the component state to the response
                 this.setState({
                     id: response.data.id,
                     name: response.data.name,
@@ -31,7 +31,7 @@ class EditMeetup extends Component {
             }) 
             .catch(err => console.log(err))
     };
-    editMeetup(newMeetup){
+    editMeetup(newMeetup){    //this is basically the same as the addmeetup fucntion from that component
         axios.request({
             method: "put",
             url: `http://localhost:3000/api/meetups/${this.state.id}`,
@@ -49,14 +49,22 @@ class EditMeetup extends Component {
     this.editMeetup(newMeetup);
     e.preventDefault();
     }
-    handleInputChange(e) {
-        const target= e.target;
-        const value= target.value; 
-        const name= target.name; 
-this.setState({
+    handleInputChange(e) {      //sets the "targets" of the form as the state variables
+        const target= e.target; //setting target as e.target instead of using e.target.name
+        const value= target.value;  //instead of saying e.target.value
+        const name= target.name;  //instead of saying e.target.name, sets name as the targeted value of the form
+this.setState({     //"updates" the state using the value which is in the input that  is clicked
     [name]: value 
 });
     }
+
+
+    //render is the same as addmeetup except
+    //the value is set to the this.state.specific thing were editing with that field
+    //this is because that is in the state now from the above
+    //loads these values so people can see when they edit
+    //the gotcha is the fact they need an input handler or react UI wont let you edit
+    //this is why "handle input change" function exists (as well as the actual functionality)
     render(){ 
         return (
             <div>
